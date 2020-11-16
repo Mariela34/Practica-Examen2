@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"></meta>
+<meta http-equiv="Content-Type" content="text/html"></meta>
+<title>Agregar articulo</title>
+
+</head>
+<body>
+Agregar nuevo articulo:
+<form action="#" th:action="@{'/article/insertar/'+${article.anthology.getId()}}" th:object="${article}" method="post">
+
+    
+    <label for="name">Name</label>
+    <input type="text" th:field="*{name}" id="name">
+  
+     <input type="submit" value="Add Article">   
+</form>
+<a th:href="@{'/verArticulos/' + ${article.anthology.id}}"><button>Volver a la lista de articulos</button><a/>
+<a th:href="@{'/perfil/anthology/' + ${article.anthology.id}}"><button>Volver al perfil</button><a/>
+<a th:href="'/'"><button>Volver al index</button><a/>
+</body>
+</html>

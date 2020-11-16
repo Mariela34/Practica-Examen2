@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"></meta>
+<meta http-equiv="Content-Type" content="text/html"></meta>
+<title>Anthologies</title>
+
+</head>
+<body>
+<h2>
+    Insertar anotologia
+</h2>
+<div>
+    <form action="#" th:action="@{/insertar}" th:object="${antology}" method="post">
+        <div style="margin: 30px 30px;">
+            <label for="name">Name</label>
+            <input type="text" th:field="*{name}" id="name">
+        </div>
+
+        <div style="margin: 30px 30px;">
+            <label for="text">Text</label>
+            <input type="text" th:field="*{text}" id="text">
+        </div>
+
+        <div style="margin: 30px 30px;">
+            <label>Date</label>
+            <input type="date" class="form-control" th:field="*{date}" th:value="*{date}">
+        </div>
+
+        <input style="margin: 10px 30px;" type="submit" value="Add Anthology">
+    </form>
+</div>
+
+<div style="margin: 20px 30px;">
+
+    <a style="margin: 30px 10px;" th:href="@{'/listar'}"><button>Ir a la lista</button><a/>
+    <a style="margin: 30px 10px;" th:href="'/'"><button>Volver al index</button><a/>
+
+</div>
+
+</body>
+</html>
